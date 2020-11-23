@@ -184,9 +184,7 @@ function nodeCli() {
         inquirer.prompt(managerQuestions).then(answers => {
             const manager = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOffice);
             teamMembers.push(manager);
-            
             idsArray.push(answers.managerID);
-            console.log(idsArray.length)
             employees();
     });
     }
@@ -226,7 +224,7 @@ function nodeCli() {
         inquirer.prompt(engineerQuestions).then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGithub);
             teamMembers.push(engineer);
-            ids.push(answers.managerID);
+            idsArray.push(answers.managerID);
             employees();
         });
     };
@@ -237,7 +235,7 @@ function nodeCli() {
         inquirer.prompt(internQuestions).then(answers => {
             const intern = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
             teamMembers.push(intern);
-            ids.push(answers.internID);
+            idsArray.push(answers.internID);
             employees();
         });
     };
